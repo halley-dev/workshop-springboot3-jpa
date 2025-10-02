@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/users")
@@ -22,8 +21,8 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> findAll() {
-       List<User> users = userService.findAll();
-       return ResponseEntity.ok().body(users);
+        List<User> users = userService.findAll();
+        return ResponseEntity.ok().body(users);
     }
 
     @GetMapping(value = "/{id}")
